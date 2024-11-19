@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #292727;
+  color: #fff;
+  padding: 20px 30px;
+}
+
+.navbar a{
+  color: #fff;
+  font-size: 20px;
+}
+.navbar__links li{
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
+}
+.navbar__links li a{
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+}
+.navbar__links li a:hover{
+  color: yellow;
+}
