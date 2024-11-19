@@ -11,11 +11,19 @@ const SignIn = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const user = {
+    name: "Emon Mahdi",
+    email: "emon@gmail.com",
+    city: "Barishal",
+    phone: "01908-131513",
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted", formData);
+
     if (formData.email === "emon@gmail.com" && formData.password === "123456") {
-      navigate("/profile");
+      navigate("/profile", { state: user });
     } else {
       navigate("/");
     }

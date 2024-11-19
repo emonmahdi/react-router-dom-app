@@ -1,4 +1,8 @@
+import { useLocation } from "react-router-dom";
+
 const Profile = () => {
+  const { state } = useLocation();
+  console.log(location.state);
   return (
     <div className="profile-container">
       <div className="profile-card">
@@ -6,19 +10,17 @@ const Profile = () => {
           <img src="ksdfsdf" alt={`'s avatar`} />
         </div>
         <div className="profile-info">
-          <h2> user.name </h2>
+          <h2> Name: {state?.name}</h2>
           <p>
-            <strong>Email:</strong> user.email{" "}
+            <strong>Email:</strong> {state?.email}
           </p>
           <p>
-            <strong>Phone:</strong> user.phone{" "}
+            <strong>Phone:</strong> {state.phone}
           </p>
           <p>
-            <strong>Address:</strong> user.address{" "}
+            <strong>City:</strong> {state.city}
           </p>
-          <p>
-            <strong>Bio:</strong> user.bio{" "}
-          </p>
+ 
         </div>
       </div>
     </div>
