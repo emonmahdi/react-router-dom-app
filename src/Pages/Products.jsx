@@ -26,30 +26,46 @@ export const Products = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Welcome to Products Page</h1>
-      {isLoading && <p>Products Are Loading.........</p>}
-      {error && <p> Some Error! </p>}
-      {!isLoading && !error && (
-        <section className="product-container">
-          <div>
+    <>
+      <h2 className="text-center" style={{ textAlign: "center" }}>
+        All Products
+      </h2>
+      <div className="products-container">
+        {isLoading && <p>Products Are Loading.........</p>}
+        {error && <p>Some Error!</p>}
+        {!isLoading && !error && (
+          <section className="products">
             {products.map((product) => {
-              const { id, title, description, price } = product;
+              const { id, title, description, category, price, images } =
+                product;
               return (
                 <article key={id} className="products-article">
+                  <img
+                    src={
+                      images && images.length > 0
+                        ? images[0]
+                        : "https://via.placeholder.com/300"
+                    }
+                    alt={title || "product-image"}
+                    style={{
+                      width: "100%",
+                      height: "10rem",
+                      objectFit: "cover",
+                    }}
+                  />
                   <h3>{title}</h3>
+                  <p>Category: {category}</p>
                   <p>{description.substring(0, 150)}......</p>
                   <p>Price: {price}</p>
                   <Link to={`/product/${id}`} state={product}>
-                    {" "}
                     Show Details
                   </Link>
                 </article>
               );
             })}
-          </div>
-        </section>
-      )}
-    </div>
+          </section>
+        )}
+      </div>
+    </>
   );
 };

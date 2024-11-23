@@ -150,9 +150,142 @@
   color: #000;
 }
 /* ==============Products============= */
-.product-container{
+/* .product-container{
   padding: 20px 60px;
 }
 .products-article{
   margin: 15px 10px;
+} */
+
+/* Container for products */
+.products-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  gap: 1.5rem; /* Space between grid items */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center align the grid container */
+}
+
+
+.products-article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.products-article:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.products-article img {
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.products-article h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.products-article p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.products-article a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.products-article a:hover {
+  background-color: #0056b3;
+}
+
+/* ====single products list design======= */
+.single-product {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsive behavior */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Limits width for better focus */
+  margin: 2rem auto; /* Centers the article */
+  overflow: hidden;
+}
+
+.single-product img {
+  flex: 1 1 40%; /* Image takes 40% of the width */
+  max-width: 100%;
+  height: 250px; /* Fixed height for the image container */
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: center; /* Centers the image within its container */
+  border-right: 1px solid #ddd; /* Separates the image and details */
+  overflow: hidden; /* Ensures overflow content is hidden */
+}
+
+
+.single-product-content {
+  flex: 1 1 60%; /* Content takes 60% of the width */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.single-product-content h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.single-product-content p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.single-product-content p b {
+  color: #333;
+}
+
+.single-product-content a {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.single-product-content a:hover {
+  background-color: #0056b3;
+}
+
