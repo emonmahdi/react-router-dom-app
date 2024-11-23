@@ -149,3 +149,10 @@
 .profile-info p strong {
   color: #000;
 }
+/* ==============Products============= */
+.product-container{
+  padding: 20px 60px;
+}
+.products-article{
+  margin: 15px 10px;
+}

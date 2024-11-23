@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -29,18 +30,26 @@ export const Products = () => {
       <h1>Welcome to Products Page</h1>
       {isLoading && <p>Products Are Loading.........</p>}
       {error && <p> Some Error! </p>}
-      <section className="product-container">
-        <div>
-          {products.map((product) => {
-            const { id, title } = product;
-            return (
-              <article key={id}>
-                <h3>{title}</h3>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      {!isLoading && !error && (
+        <section className="product-container">
+          <div>
+            {products.map((product) => {
+              const { id, title, description, price } = product;
+              return (
+                <article key={id} className="products-article">
+                  <h3>{title}</h3>
+                  <p>{description.substring(0, 150)}......</p>
+                  <p>Price: {price}</p>
+                  <Link to={`/product/${id}`} state={product}>
+                    {" "}
+                    Show Details
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </div>
   );
 };
