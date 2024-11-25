@@ -12,11 +12,13 @@ import { Home } from "./Pages/Home.jsx";
 import SignIn from "./Pages/SignIn.jsx";
 import Profile from "./Pages/Profile.jsx";
 import ProductDetails from "./Components/ProductDetails.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Header />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/home",
